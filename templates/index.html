@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability Calculator</title>
+</head>
+<body>
+    <h1>Probability Calculator</h1>
+    <form method="POST" action="/upload">
+        <h2>Select situations:</h2>
+        <label><input type="checkbox" name="situations" value="4v5 PK"> 4v5 PK</label><br>
+        <label><input type="checkbox" name="situations" value="5v4 PP"> 5v4 PP</label><br>
+        <label><input type="checkbox" name="situations" value="5v5"> 5v5</label><br>
+        <label><input type="checkbox" name="situations" value="5v5 Score & VA"> 5v5 Score & VA</label><br>
+        <label><input type="checkbox" name="situations" value="Even Strength"> Even Strength</label><br>
+        <label><input type="checkbox" name="situations" value="All_Sit"> All_Sit</label><br>
+
+        <h2>Key Stats:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Stat</th>
+                    <th>Team 1</th>
+                    <th>Team 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through the stats and situations to create the form inputs -->
+                {% for stat in ["CF%", "FF%", "xGF%", "HDCF%", "HDSF%", "PDO"] %}
+                <tr>
+                    <td>{{ stat }}</td>
+                    <td><input type="text" name="team1_{{ stat }}"></td>
+                    <td><input type="text" name="team2_{{ stat }}"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Last 5 Games:</h2>
+        <label for="team1_last5">Team 1 (W-L):</label>
+        <input type="text" id="team1_last5" name="team1_last5"><br><br>
+        <label for="team2_last5">Team 2 (W-L):</label>
+        <input type="text" id="team2_last5" name="team2_last5"><br><br>
+
+        <h2>Back-2-Back Game:</h2>
+        <h3>Team 1:</h3>
+        <label><input type="checkbox" name="team1_back2back" value="Yes"> Yes</label>
+        <label><input type="checkbox" name="team1_back2back" value="No"> No</label><br><br>
+
+        <h3>Team 2:</h3>
+        <label><input type="checkbox" name="team2_back2back" value="Yes"> Yes</label>
+        <label><input type="checkbox" name="team2_back2back" value="No"> No</label><br><br>
+
+        <button type="submit">Calculate Probabilities</button>
+    </form>
+</body>
+</html>
+
+
