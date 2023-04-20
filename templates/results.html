@@ -1,0 +1,40 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <h2>Final Probs: {{ final_probs }}</h2>
+    <h2>Last 5 Games: {{ last_5_games }}</h2>
+    <h2>B2B Games: {{ b2b_games }}</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Situation</th>
+                <th>Team 1 Probability</th>
+                <th>Team 2 Probability</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Team 1</td>
+                <td>{{ final_probs["Team 1"] }}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Team 2</td>
+                <td></td>
+                <td>{{ final_probs["Team 2"] }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a href="/">Back to form</a>
+</body>
+</html>
+
+
