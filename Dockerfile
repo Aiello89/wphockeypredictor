@@ -17,6 +17,7 @@ EXPOSE 8080
 ENV FLASK_APP=WPP_method_web_adv_v3.py
 
 # Run WPP_method_web_adv when the container launches
-CMD sh -c 'gunicorn --bind 0.0.0.0:$PORT --workers 1 app:app'
+CMD sh -c 'gunicorn --bind 0.0.0.0:$PORT --workers 1 WPP_method_web_adv_v3:app'
+
 
 
