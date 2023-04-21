@@ -14,7 +14,7 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 EXPOSE 8080
 
 # Define environment variable
-ENV FLASK_APP=WPP_method_web_adv_v3.py
+ENV FLASK_APP=WPP_method_web_adv_v3
 
 # Run WPP_method_web_adv when the container launches
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "WPP_method_web_adv_3:app"]
